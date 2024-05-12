@@ -4,6 +4,7 @@ const express = require('express');
 const cors = require('cors');
 const logger = require('morgan');
 const apartmentsRouter = require('./routes/apartments');
+const housesRouter = require('./routes/houses');
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -17,8 +18,7 @@ app.get('/', function(req, res) {
 });
 
 app.use('/apartments', apartmentsRouter);
-
-
+app.use('/houses', housesRouter);
 
 app.listen(PORT, function() {
   console.log(`Server running on ${PORT}`)
